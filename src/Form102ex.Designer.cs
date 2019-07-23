@@ -32,7 +32,6 @@
             this.RegCodesEDT = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.symbolEdt = new System.Windows.Forms.TextBox();
             this.dformEDT = new System.Windows.Forms.TextBox();
@@ -61,11 +60,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(323, 123);
+            this.button1.Location = new System.Drawing.Point(437, 130);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(191, 23);
+            this.button1.Size = new System.Drawing.Size(115, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "получить";
+            this.button1.Text = "Получить";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -77,44 +76,35 @@
             "1000",
             "23",
             "101"});
-            this.RegCodesEDT.Location = new System.Drawing.Point(31, 18);
+            this.RegCodesEDT.Location = new System.Drawing.Point(271, 9);
             this.RegCodesEDT.Name = "RegCodesEDT";
-            this.RegCodesEDT.Size = new System.Drawing.Size(120, 95);
+            this.RegCodesEDT.Size = new System.Drawing.Size(121, 95);
             this.RegCodesEDT.TabIndex = 8;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(154, 19);
+            this.button2.Location = new System.Drawing.Point(7, 36);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(110, 23);
             this.button2.TabIndex = 9;
-            this.button2.Text = "Add";
+            this.button2.Text = "Добавить банк";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(154, 53);
+            this.button4.Location = new System.Drawing.Point(130, 36);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(107, 23);
             this.button4.TabIndex = 11;
-            this.button4.Text = "delete";
+            this.button4.Text = "Удалить банк";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 126);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Символ:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(446, 90);
+            this.label2.Location = new System.Drawing.Point(414, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(17, 13);
             this.label2.TabIndex = 13;
@@ -122,7 +112,7 @@
             // 
             // symbolEdt
             // 
-            this.symbolEdt.Location = new System.Drawing.Point(106, 126);
+            this.symbolEdt.Location = new System.Drawing.Point(130, 130);
             this.symbolEdt.Name = "symbolEdt";
             this.symbolEdt.Size = new System.Drawing.Size(100, 20);
             this.symbolEdt.TabIndex = 14;
@@ -130,7 +120,7 @@
             // 
             // dformEDT
             // 
-            this.dformEDT.Location = new System.Drawing.Point(486, 90);
+            this.dformEDT.Location = new System.Drawing.Point(437, 39);
             this.dformEDT.Name = "dformEDT";
             this.dformEDT.Size = new System.Drawing.Size(100, 20);
             this.dformEDT.TabIndex = 15;
@@ -138,7 +128,7 @@
             // 
             // dtoEDT
             // 
-            this.dtoEDT.Location = new System.Drawing.Point(636, 87);
+            this.dtoEDT.Location = new System.Drawing.Point(573, 39);
             this.dtoEDT.Name = "dtoEDT";
             this.dtoEDT.Size = new System.Drawing.Size(100, 20);
             this.dtoEDT.TabIndex = 16;
@@ -147,16 +137,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(608, 90);
+            this.label3.Location = new System.Drawing.Point(543, 43);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(22, 13);
+            this.label3.Size = new System.Drawing.Size(24, 13);
             this.label3.TabIndex = 17;
-            this.label3.Text = "по:";
+            this.label3.Text = "По:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(586, 18);
+            this.label4.Location = new System.Drawing.Point(409, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 19;
@@ -169,7 +159,7 @@
             this.FormsList.Items.AddRange(new object[] {
             "101",
             "102"});
-            this.FormsList.Location = new System.Drawing.Point(649, 18);
+            this.FormsList.Location = new System.Drawing.Point(466, 9);
             this.FormsList.Name = "FormsList";
             this.FormsList.Size = new System.Drawing.Size(87, 21);
             this.FormsList.TabIndex = 18;
@@ -178,7 +168,7 @@
             // BanksEnumerator
             // 
             this.BanksEnumerator.FormattingEnabled = true;
-            this.BanksEnumerator.Location = new System.Drawing.Point(256, 21);
+            this.BanksEnumerator.Location = new System.Drawing.Point(7, 9);
             this.BanksEnumerator.Name = "BanksEnumerator";
             this.BanksEnumerator.Size = new System.Drawing.Size(258, 21);
             this.BanksEnumerator.TabIndex = 20;
@@ -218,7 +208,6 @@
             this.panel1.Controls.Add(this.dformEDT);
             this.panel1.Controls.Add(this.symbolEdt);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(23, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(781, 159);
@@ -226,20 +215,20 @@
             // 
             // btnLoadIndicators
             // 
-            this.btnLoadIndicators.Location = new System.Drawing.Point(212, 126);
+            this.btnLoadIndicators.Location = new System.Drawing.Point(7, 128);
             this.btnLoadIndicators.Name = "btnLoadIndicators";
-            this.btnLoadIndicators.Size = new System.Drawing.Size(45, 23);
+            this.btnLoadIndicators.Size = new System.Drawing.Size(117, 23);
             this.btnLoadIndicators.TabIndex = 22;
-            this.btnLoadIndicators.Text = "<";
+            this.btnLoadIndicators.Text = "Выбрать символ...";
             this.btnLoadIndicators.UseVisualStyleBackColor = true;
             this.btnLoadIndicators.Click += new System.EventHandler(this.btnLoadIndicators_Click);
             // 
             // GetXMLButton
             // 
             this.GetXMLButton.Enabled = false;
-            this.GetXMLButton.Location = new System.Drawing.Point(649, 122);
+            this.GetXMLButton.Location = new System.Drawing.Point(558, 130);
             this.GetXMLButton.Name = "GetXMLButton";
-            this.GetXMLButton.Size = new System.Drawing.Size(75, 23);
+            this.GetXMLButton.Size = new System.Drawing.Size(115, 23);
             this.GetXMLButton.TabIndex = 21;
             this.GetXMLButton.Text = "XML";
             this.GetXMLButton.UseVisualStyleBackColor = true;
@@ -328,7 +317,6 @@
         private System.Windows.Forms.ListBox RegCodesEDT;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox symbolEdt;
         private System.Windows.Forms.TextBox dformEDT;
