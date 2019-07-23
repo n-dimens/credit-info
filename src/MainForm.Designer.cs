@@ -1,6 +1,6 @@
 ﻿namespace TestForm
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,7 @@
             this.BankName = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnShowBanks = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -141,15 +141,15 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnShowBanks
             // 
-            this.button3.Location = new System.Drawing.Point(421, 68);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "BankEnums";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnShowBanks.Location = new System.Drawing.Point(421, 68);
+            this.btnShowBanks.Name = "btnShowBanks";
+            this.btnShowBanks.Size = new System.Drawing.Size(75, 23);
+            this.btnShowBanks.TabIndex = 13;
+            this.btnShowBanks.Text = "BankEnums";
+            this.btnShowBanks.UseVisualStyleBackColor = true;
+            this.btnShowBanks.Click += new System.EventHandler(this.btnShowBanks_Click);
             // 
             // label4
             // 
@@ -160,13 +160,13 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "label4";
             // 
-            // Form1
+            // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 469);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnShowBanks);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.BankName);
@@ -179,9 +179,9 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainWindow";
             this.Text = "Информация по F 123, 134, 135 (пример)";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -200,7 +200,7 @@
         private System.Windows.Forms.Label BankName;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnShowBanks;
         private System.Windows.Forms.Label label4;
     }
 }

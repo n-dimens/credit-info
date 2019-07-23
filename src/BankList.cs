@@ -9,11 +9,11 @@ using System.Windows.Forms;
 
 namespace TestForm
 {
-    public partial class BankName : Form
+    public partial class BankList : Form
     {
         public CregitInfoWS.CreditOrgInfo ws { get; set; }
         public int regnumber { get; set; }
-        public BankName()
+        public BankList()
         {
             InitializeComponent();
             regnumber = -1;
@@ -31,7 +31,7 @@ namespace TestForm
             shema = shema.Replace("encoding=\"utf-16\"", "encoding=\"utf-8\"");
             System.IO.File.WriteAllText("EnumBIC.xsd", shema);
             dataGridView1.DataSource = ds.Tables[0];
-            Form1.MapGridViewTitle(dataGridView1);
+            MainForm.MapGridViewTitle(dataGridView1);
 
         }
 

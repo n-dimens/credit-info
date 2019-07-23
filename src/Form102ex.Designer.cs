@@ -43,13 +43,13 @@
             this.BanksEnumerator = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLoadIndicators = new System.Windows.Forms.Button();
             this.GetXMLButton = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.FormIndicatorsEnumbutton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -204,7 +204,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.FormIndicatorsEnumbutton);
+            this.panel1.Controls.Add(this.btnLoadIndicators);
             this.panel1.Controls.Add(this.GetXMLButton);
             this.panel1.Controls.Add(this.BanksEnumerator);
             this.panel1.Controls.Add(this.button1);
@@ -223,6 +223,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(781, 159);
             this.panel1.TabIndex = 8;
+            // 
+            // btnLoadIndicators
+            // 
+            this.btnLoadIndicators.Location = new System.Drawing.Point(212, 126);
+            this.btnLoadIndicators.Name = "btnLoadIndicators";
+            this.btnLoadIndicators.Size = new System.Drawing.Size(45, 23);
+            this.btnLoadIndicators.TabIndex = 22;
+            this.btnLoadIndicators.Text = "<";
+            this.btnLoadIndicators.UseVisualStyleBackColor = true;
+            this.btnLoadIndicators.Click += new System.EventHandler(this.btnLoadIndicators_Click);
             // 
             // GetXMLButton
             // 
@@ -291,16 +301,6 @@
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // FormIndicatorsEnumbutton
-            // 
-            this.FormIndicatorsEnumbutton.Location = new System.Drawing.Point(212, 126);
-            this.FormIndicatorsEnumbutton.Name = "FormIndicatorsEnumbutton";
-            this.FormIndicatorsEnumbutton.Size = new System.Drawing.Size(45, 23);
-            this.FormIndicatorsEnumbutton.TabIndex = 22;
-            this.FormIndicatorsEnumbutton.Text = "<";
-            this.FormIndicatorsEnumbutton.UseVisualStyleBackColor = true;
-            this.FormIndicatorsEnumbutton.Click += new System.EventHandler(this.FormIndicatorsEnumbutton_Click);
-            // 
             // Form102ex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,6 +345,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button GetXMLButton;
-        private System.Windows.Forms.Button FormIndicatorsEnumbutton;
+        private System.Windows.Forms.Button btnLoadIndicators;
     }
 }

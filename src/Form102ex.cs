@@ -58,7 +58,7 @@ namespace TestForm
                 if (ds != null)
                 {
                     dataGridView1.DataSource = ds.Tables[0];
-                    Form1.MapGridViewTitle(dataGridView1);
+                    MainForm.MapGridViewTitle(dataGridView1);
                     if (ds.Tables[0].Rows.Count > 0)
                     {
                         tabControl1.SelectedIndex = 0;
@@ -66,7 +66,7 @@ namespace TestForm
 
                     }
                     dataGridView2.DataSource = ds.Tables[1];
-                    Form1.MapGridViewTitle(dataGridView2);
+                    MainForm.MapGridViewTitle(dataGridView2);
                     if (ds.Tables[1].Rows.Count > 0)
                     {
                         tabControl1.SelectedIndex = 1;
@@ -149,9 +149,9 @@ namespace TestForm
             }
         }
 
-        private void FormIndicatorsEnumbutton_Click(object sender, EventArgs e)
+        private void btnLoadIndicators_Click(object sender, EventArgs e)
         {
-            Ind1_101_102_Enums indenum = new Ind1_101_102_Enums();
+            IndicatorsForm indenum = new IndicatorsForm();
             indenum.ws = this.ws;
             if (FormsList.SelectedIndex == 1)
             {

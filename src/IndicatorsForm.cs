@@ -9,13 +9,13 @@ using System.Windows.Forms;
 
 namespace TestForm
 {
-    public partial class Ind1_101_102_Enums : Form
+    public partial class IndicatorsForm : Form
     {
 
         public bool Is102Form {set; private get;}
         public CregitInfoWS.CreditOrgInfo ws { get; set; }
         public double selected_code { get; set; }
-        public Ind1_101_102_Enums()
+        public IndicatorsForm()
         {
             InitializeComponent();
             selected_code=-1;
@@ -44,7 +44,7 @@ namespace TestForm
             }  
 
             dataGridView1.DataSource = ds.Tables[0];
-            Form1.MapGridViewTitle(dataGridView1);
+            MainForm.MapGridViewTitle(dataGridView1);
         }
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)

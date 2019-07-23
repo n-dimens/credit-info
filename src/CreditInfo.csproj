@@ -50,23 +50,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BankName.cs">
+    <Compile Include="BankList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BankName.Designer.cs">
-      <DependentUpon>BankName.cs</DependentUpon>
+    <Compile Include="BankList.Designer.cs">
+      <DependentUpon>BankList.cs</DependentUpon>
     </Compile>
-    <Compile Include="COInfoForm.cs">
+    <Compile Include="ItemDDL.cs" />
+    <Compile Include="OrganisationInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="COInfoForm.Designer.cs">
-      <DependentUpon>COInfoForm.cs</DependentUpon>
+    <Compile Include="OrganisationInfoForm.Designer.cs">
+      <DependentUpon>OrganisationInfoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form102ex.cs">
       <SubType>Form</SubType>
@@ -74,11 +75,11 @@
     <Compile Include="Form102ex.Designer.cs">
       <DependentUpon>Form102ex.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ind1_101_102_Enums.cs">
+    <Compile Include="IndicatorsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ind1_101_102_Enums.Designer.cs">
-      <DependentUpon>Ind1_101_102_Enums.cs</DependentUpon>
+    <Compile Include="IndicatorsForm.Designer.cs">
+      <DependentUpon>IndicatorsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,20 +88,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BankName.resx">
-      <DependentUpon>BankName.cs</DependentUpon>
+    <EmbeddedResource Include="BankList.resx">
+      <DependentUpon>BankList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="COInfoForm.resx">
-      <DependentUpon>COInfoForm.cs</DependentUpon>
+    <EmbeddedResource Include="OrganisationInfoForm.resx">
+      <DependentUpon>OrganisationInfoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form102ex.resx">
       <DependentUpon>Form102ex.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ind1_101_102_Enums.resx">
-      <DependentUpon>Ind1_101_102_Enums.cs</DependentUpon>
+    <EmbeddedResource Include="IndicatorsForm.resx">
+      <DependentUpon>IndicatorsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
