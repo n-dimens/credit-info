@@ -26,9 +26,9 @@ namespace TestForm {
             for (int i = 0; i < rows.Count; i++) {
                 if (rows[i]["RB"] == DBNull.Value) continue;
 
-                double ic = System.Convert.ToDouble(rows[i]["IntCode"]);
+                double ic = Convert.ToDouble(rows[i]["IntCode"]);
                 string nm = rows[i]["NM"].ToString();
-                ItemDDL idl = new ItemDDL() { Code = ic, Name = nm };
+                ItemDDL idl = new ItemDDL(nm, ic);
                 BanksEnumerator.Items.Add(idl);
             }
             FormsList.SelectedIndex = 0;

@@ -154,9 +154,8 @@ namespace TestForm {
         }
 
         private void button2_Click(object sender, EventArgs e) {
-            OrganisationInfoForm fe = new OrganisationInfoForm();
-            fe.ws = this._serviceClient;
-            fe.ShowDialog();
+            var frmOrganisationInfo = new OrganisationInfoForm(this._serviceClient);
+            frmOrganisationInfo.ShowDialog();
         }
 
         private void btnShowBanks_Click(object sender, EventArgs e) {

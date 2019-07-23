@@ -3,31 +3,26 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
+using TestForm.CregitInfoWS;
 
 namespace TestForm {
     public partial class OrganisationInfoForm : Form {
-        public CregitInfoWS.CreditOrgInfo ws { get; set; }
+        private readonly CreditOrgInfo serviceClient;
 
-        public OrganisationInfoForm() {
+        public OrganisationInfoForm(CreditOrgInfo serviceClient) {
+            this.serviceClient = serviceClient;
             InitializeComponent();
         }
 
         private void OrganisationForm_Load(object sender, EventArgs e) {
-            var ds = ws.EnumBIC();
-
-            string shema = ds.GetXmlSchema();
-            System.IO.File.WriteAllText("EnumBIC.xsd", shema);
-
-            var rows = ds.Tables[0].Rows;
-            for (int i = 0; i < rows.Count; i++) {
-                double ic = System.Convert.ToDouble(rows[i]["IntCode"]);
-                string nm = rows[i]["NM"].ToString();
-                ItemDDL idl = new ItemDDL() { Code = ic, Name = nm };
-                cbBanks.Items.Add(idl);
+            var banks = GetBanks();
+            foreach (var bank in banks) {
+                this.cbBanks.Items.Add(bank);
             }
         }
 
@@ -38,35 +33,64 @@ namespace TestForm {
         }
 
         private void btnLoadInfo_Click(object sender, EventArgs e) {
-            List<double> codes = new List<double>();
-            foreach (var itm in lbInternalCodes.Items) {
-                if (itm != null) {
-                    codes.Add(System.Convert.ToDouble(itm));
-                }
+            var selectedCodes = GetSelectedInternalCodes();
+            var info = GetBanksInfo(selectedCodes);
+            if (info != null) {
+                dataGridView1.DataSource = info;
+                SetColumnsHeader(info);
             }
-
-            DataSet ret = ws.CreditInfoByIntCodeEx(codes.ToArray());
-            if (ret != null) {
-                string shema = ret.GetXmlSchema();
-                System.IO.File.WriteAllText("CreditInfoByIntCodeEx.xsd", shema, Encoding.UTF8); ;
-                dataGridView1.DataSource = ret.Tables[0];
-            }
-
         }
 
         private void btnLoadXmlInfo_Click(object sender, EventArgs e) {
-            List<double> codes = new List<double>();
-            foreach (var itm in lbInternalCodes.Items) {
-                if (itm != null) {
-                    codes.Add(System.Convert.ToDouble(itm));
+            var selectedCodes = GetSelectedInternalCodes().ToArray();
+            var xmlInfo = this.serviceClient.CreditInfoByIntCodeExXML(selectedCodes);
+            if (xmlInfo != null) {
+                // todo: Открывать notepad
+                MessageBox.Show(xmlInfo.InnerXml);
+            }
+        }
+
+        private IReadOnlyCollection<double> GetSelectedInternalCodes() {
+            var codes = new List<double>();
+            foreach (var codeItem in lbInternalCodes.Items) {
+                if (codeItem != null) {
+                    codes.Add(Convert.ToDouble(codeItem));
                 }
             }
 
-            var ret = ws.CreditInfoByIntCodeExXML(codes.ToArray());
-            if (ret != null) {
-                MessageBox.Show(ret.InnerXml);
+            return codes.AsReadOnly();
+        }
 
+        private void SetColumnsHeader(DataTable table) {
+            for (int i = 0; i < table.Columns.Count; i++) {
+                this.dataGridView1.Columns[i].HeaderText = table.Columns[i].Caption;
             }
+        }
+
+        private IReadOnlyCollection<ItemDDL> GetBanks() {
+            var result = new List<ItemDDL>();
+            var ds = this.serviceClient.EnumBIC();
+            var shema = ds.GetXmlSchema();
+            File.WriteAllText("EnumBIC.xsd", shema);
+            var rows = ds.Tables[0].Rows;
+            for (int i = 0; i < rows.Count; i++) {
+                var internalCode = Convert.ToDouble(rows[i]["IntCode"]);
+                var name = rows[i]["NM"].ToString();
+                result.Add(new ItemDDL(name, internalCode));
+            }
+
+            return result.AsReadOnly();
+        }
+
+        private DataTable GetBanksInfo(IEnumerable<double> internalCodes) {
+            var info = this.serviceClient.CreditInfoByIntCodeEx(internalCodes.ToArray());
+            if (info != null) {
+                var shema = info.GetXmlSchema();
+                File.WriteAllText("CreditInfoByIntCodeEx.xsd", shema, Encoding.UTF8);
+                return info.Tables[0];
+            }
+
+            return null;
         }
     }
 }

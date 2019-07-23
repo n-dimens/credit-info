@@ -4,11 +4,20 @@ using System.Linq;
 using System.Text;
 
 namespace TestForm {
+    // todo: struct?
     public class ItemDDL {
-        public double Code { get; set; }
-        public string Name { get; set; }
+        private readonly string name;
+
+        public double Code { get; private set; }
+
+        public ItemDDL(string name, double code) {
+            this.name = name;
+            Code = code;
+        }
+
+        // Для отображения в OrganisationForm.cbBanks
         public override string ToString() {
-            return Name + " :" + Code.ToString();
+            return this.name + " : " + Code.ToString();
         }
     }
 }

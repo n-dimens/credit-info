@@ -75,6 +75,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(13, 173);
             this.dataGridView1.Name = "dataGridView1";
@@ -91,7 +94,7 @@
             this.btnLoadXmlInfo.UseVisualStyleBackColor = true;
             this.btnLoadXmlInfo.Click += new System.EventHandler(this.btnLoadXmlInfo_Click);
             // 
-            // COInfoForm
+            // OrganisationInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -102,7 +105,7 @@
             this.Controls.Add(this.btnAddInternalCode);
             this.Controls.Add(this.cbBanks);
             this.Controls.Add(this.lbInternalCodes);
-            this.Name = "COInfoForm";
+            this.Name = "OrganisationInfoForm";
             this.Text = "COInfoForm";
             this.Load += new System.EventHandler(this.OrganisationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
