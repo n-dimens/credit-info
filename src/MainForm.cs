@@ -160,12 +160,10 @@ namespace TestForm {
         }
 
         private void btnShowBanks_Click(object sender, EventArgs e) {
-            BankList bn = new BankList();
-            bn.ws = this._serviceClient;
-            if (bn.ShowDialog() == DialogResult.OK) {
-                BankRegnum.Text = bn.regnumber.ToString();
+            var frmBankList = new BankList(this._serviceClient);
+            if (frmBankList.ShowDialog() == DialogResult.OK) {
+                BankRegnum.Text = frmBankList.RegistraionNumber.ToString();
             }
         }
-
     }
 }
